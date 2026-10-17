@@ -1,0 +1,165 @@
+:root {
+  --lila: #8e6bbf;
+  --lila-oscuro: #4a2c6e;
+  --crema: #fbf7ff;
+  --verde: #6b8f71;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(160deg, #f3e9ff, #e4f1e6);
+  color: var(--lila-oscuro);
+  min-height: 100vh;
+}
+
+.oculto { display: none !important; }
+
+/* ---------- Pantalla del candado ---------- */
+.candado {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.candado-caja {
+  background: var(--crema);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(74, 44, 110, 0.18);
+}
+
+.icono-lirio { font-size: 3rem; color: var(--lila); }
+.candado h2 { margin: 8px 0 4px; }
+.sub { opacity: 0.7; margin-bottom: 20px; }
+
+#form-codigo { display: flex; gap: 8px; }
+
+#codigo {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #d9c8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  min-width: 0;
+}
+#codigo:focus { border-color: var(--lila); }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+#form-codigo button {
+  background: var(--lila);
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 1rem;
+}
+
+.mensaje { min-height: 1.4em; margin-top: 12px; color: #b3414f; font-size: 0.95rem; }
+
+.btn-pista {
+  margin-top: 8px;
+  background: transparent;
+  color: var(--lila);
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.lista-pistas {
+  list-style: none;
+  margin-top: 12px;
+  text-align: left;
+}
+.lista-pistas li {
+  background: #efe5fb;
+  border-left: 4px solid var(--lila);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  animation: aparecer 0.5s ease;
+}
+
+.sacudir { animation: sacudir 0.4s; }
+
+@keyframes sacudir {
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Página del poema ---------- */
+.contenido {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  position: relative;
+  overflow: hidden;
+  animation: aparecer 1.2s ease;
+}
+
+.poema {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(4px);
+  border-radius: 22px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(74, 44, 110, 0.15);
+}
+
+.flor { font-size: 2.6rem; color: var(--lila); }
+
+.poema h1 {
+  font-size: 2.6rem;
+  letter-spacing: 3px;
+  margin: 6px 0 24px;
+  color: var(--lila-oscuro);
+}
+
+.poema p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.poema .firma { font-style: normal; color: var(--verde); margin-bottom: 0; }
+
+/* Pétalos cayendo */
+.petalos { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+
+.petalo {
+  position: absolute;
+  top: -40px;
+  color: var(--lila);
+  opacity: 0.6;
+  animation: caer linear infinite;
+}
+
+@keyframes caer {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .poema { padding: 28px 18px; }
+  .poema h1 { font-size: 2.1rem; }
+  .poema p { font-size: 1rem; }
+}

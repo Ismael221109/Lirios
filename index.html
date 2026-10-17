@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lirios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PANTALLA DE CÓDIGO ============ -->
+  <section id="candado" class="candado">
+    <div class="candado-caja">
+      <div class="icono-lirio">❀</div>
+      <h2>Una sorpresa te espera</h2>
+      <p class="sub">Escribe el código para entrar</p>
+
+      <form id="form-codigo" autocomplete="off">
+        <input type="text" id="codigo" placeholder="Código" inputmode="numeric" maxlength="12">
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p id="mensaje" class="mensaje"></p>
+
+      <ul id="lista-pistas" class="lista-pistas"></ul>
+    </div>
+  </section>
+
+  <!-- ============ PÁGINA PRINCIPAL (oculta hasta acertar) ============ -->
+  <main id="contenido" class="contenido oculto">
+    <div class="petalos" id="petalos"></div>
+
+    <article class="poema">
+      <div class="flor">❀</div>
+      <h1>Lirios</h1>
+
+      <p>Estos lirios son por que eres mi delirio,<br>
+      mi calma en medio del martirio,<br>
+      mi luz cuando el día es sombra,<br>
+      mi lugar sin ningún exilio.</p>
+
+      <p>Tienen la blancura de tu risa,<br>
+      el perfume de tu nombre,<br>
+      y en cada pétalo que abre el viento<br>
+      te encuentro, y me desarmo, y me sobre.</p>
+
+      <p>Si el mundo fuera un jardín callado,<br>
+      tú serías su primavera,<br>
+      y yo, el que cada mañana<br>
+      te espera, te cuida y te quiere entera.</p>
+
+      <p>Por eso te traigo lirios,<br>
+      porque en ellos late lo que siento:<br>
+      que eres mi delirio más hermoso<br>
+      y mi mejor, mi dulce, mi sereno momento.</p>
+
+      <p class="firma">— Con todo mi cariño ❀</p>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
